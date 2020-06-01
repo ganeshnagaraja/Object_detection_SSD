@@ -25,7 +25,7 @@ pip install requirements.txt
 3. Download dependencies as seen at the last section of this readme.
 
 ### Note
-We have Multiple classes, but they have been combined them into one class for the purpose of this objective
+Ther are Multiple(10) classes, but they have been combined into one class for the purpose of this objective( since the number of objects per class is low and it requires a lot of data augmentation and training)
 
 ## To run the code:
 
@@ -39,13 +39,11 @@ Data Preparation:
 Training images:
 - Images are present in the `ShelfImages` folder.
 - Naming convention is as follows - SHELF_NAME_SNAPSHOT.JPG
-Labels:
-- Class: Since we only need to identify if the object is present or not, we will combine all the classes to one class
-- BBoxes: Folder `ProductImagesFromShelves` contains the respective class folders along with images and these images' names contain bounding boxes coordinates for individual object.
+- Labels --> Class: Since we only need to identify if the object is present or not, we will combine all the classes to one class
+  BBoxes: Folder `ProductImagesFromShelves` contains the respective class folders along with images and these images' names contain bounding boxes coordinates for individual object.
   Eg: C1_P01_N1_S3_1.JPG_1276_1828_276_448.png -- Traning image C1_P01_N1_S3_1.JPG contains an object whose
   cordinates are 1276_1828_276_448 (x-min, y-min, width, height)
-Scripts:
-- `create_data_lists.py` script first creates a 'file_name_with_details.csv' which contains information such as
+- Scripts --> `create_data_lists.py` script first creates a 'file_name_with_details.csv' which contains information such as
   the orginial file name present in ShelfImages folder, object coordinates, class of the object, etc.
   Secondly the script uses this information to create a two JSON files - `TRAIN_images.json` containing all the images names along with the path and second file `TRAIN_objects.json` contains bounding boxes and class labels for the respective image.
 Augmentation:

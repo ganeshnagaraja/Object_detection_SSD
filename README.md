@@ -47,7 +47,7 @@ Training images:
   the orginial file name present in ShelfImages folder, object coordinates, class of the object, etc.
   Secondly the script uses this information to create a two JSON files - `TRAIN_images.json` containing all the images names along with the path and second file `TRAIN_objects.json` contains bounding boxes and class labels for the respective image.
 - Augmentation -->
-zoom out with 50% chance of occurance(randomness of 0.5) - to be able to detect smaller images
+zoom out with 50% chance of occurance(randomness of 0.5) - to be able to detect smaller images.   
 zoom in (random crop) - to detect larger and partial images
 flip images horizontally
 photometric distort - brightness, contrast, staturation and hue. Each with a 50% chance

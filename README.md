@@ -20,7 +20,7 @@ pip install requirements.txt
 1. Download the datasets for training from https://github.com/gulvarol/grocerydataset and combine both the parts
    Replace the shelf_images folder with https://storage.googleapis.com/open_source_datasets/ShelfImages.tar.gz
 
-2. Download the model checkpoints from [Google Drive](https://drive.google.com/open?id=1cgKhXtFe0eUJrLMt8ptRactHGRzfgjob)
+2. Download the model checkpoint from [Google Drive](https://drive.google.com/open?id=1cgKhXtFe0eUJrLMt8ptRactHGRzfgjob)
 
 3. Download dependencies as seen at the last section of this readme.
 
@@ -64,6 +64,6 @@ To run Validation:
 - Run validation: `python3 eval.py -c config.yaml`
 - Calculates the metric on the validation dataset such as mAP, precision, recall
 
-Inferenc:
+Inference:
 - Edit the `config.yaml` file with the path to the test images folder and chose the right checkpoint
 - run `python3 inference.py -c config.yaml`

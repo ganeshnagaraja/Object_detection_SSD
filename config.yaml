@@ -1,0 +1,43 @@
+# datapreprocessing confid
+datapreprocessing:
+  location: '../GroceryDataset/ProductImagesFromShelves'
+  csv_filename: 'file_name_with_details.csv'
+  field_names_in_csv: # column names of csv file
+    - 'shelf_file_name'
+    - 'file_name'
+    - 'shelf_id'
+    - 'snapshot'
+    - 'product_category'
+    - 'x_min'
+    - 'y_min'
+    - 'width'
+    - 'height'
+    - 'x_max'
+    - 'y_max'
+  shelf_images_train: '../GroceryDataset/ShelfImages/train'
+  shelf_images_val: '../GroceryDataset/ShelfImages/val'
+  shelf_images_test: '../GroceryDataset/ShelfImages/test'
+  output_folder: '../GroceryDataset'
+
+# parameters for training and validation
+train:
+  data_folder: '../GroceryDataset'
+  difficult: False
+  checkpoint: 'checkpoint_ssd300.pth.tar' # null (equivalent to None in python) - if train from scratch
+  batch_size: 32
+  iterations: 120000
+  workers: 8
+  print_frequency: 10
+  lr: 0.001
+  decay_lr:
+    - 50000
+    - 100000
+  decay_lr_to: 0.1
+  momentum: 0.9
+  weight_decay: 0.0005
+  grad_clip: null
+
+inference:
+  image_folder: '../GroceryDataset/ShelfImages/test/'
+  results_dir: '../GroceryDataset/results-TEST'
+  checkpoint: 'checkpoint_ssd300.pth.tar'

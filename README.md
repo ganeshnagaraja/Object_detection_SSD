@@ -39,18 +39,18 @@ Data Preparation:
 Training images:
 - Images are present in the `ShelfImages` folder.
 - Naming convention is as follows - SHELF_NAME_SNAPSHOT.JPG
-- Labels --> Class: Since we only need to identify if the object is present or not, we will combine all the classes to one class
+- Labels --> Class: Since we only need to identify if the object is present or not, we will combine all the classes to one class.
   BBoxes: Folder `ProductImagesFromShelves` contains the respective class folders along with images and these images' names contain bounding boxes coordinates for individual object.
   Eg: C1_P01_N1_S3_1.JPG_1276_1828_276_448.png -- Traning image C1_P01_N1_S3_1.JPG contains an object whose
   cordinates are 1276_1828_276_448 (x-min, y-min, width, height)
 - Scripts --> `create_data_lists.py` script first creates a 'file_name_with_details.csv' which contains information such as
   the orginial file name present in ShelfImages folder, object coordinates, class of the object, etc.
   Secondly the script uses this information to create a two JSON files - `TRAIN_images.json` containing all the images names along with the path and second file `TRAIN_objects.json` contains bounding boxes and class labels for the respective image.
-Augmentation:
-- zoom out with 50% chance of occurance(randomness of 0.5) - to be able to detect smaller images
-- zoom in (random crop) - to detect larger and partial images
-- flip images horizontally
-- photometric distort - brightness, contrast, staturation and hue. Each with a 50% chance
+- Augmentation -->
+zoom out with 50% chance of occurance(randomness of 0.5) - to be able to detect smaller images
+zoom in (random crop) - to detect larger and partial images
+flip images horizontally
+photometric distort - brightness, contrast, staturation and hue. Each with a 50% chance
 
 To train:
 - Edit the `config.yaml` file to fill in the paths to the dataset, select hyperparameter values, etc. All the parameters are explained in comments within the config file.
